@@ -15,7 +15,7 @@
    
    2）将整个项目代码clone下来，并拷导入到pycharm中。
    
-   3）安装相应的依赖库：pip install PyQt5
+   3）安装相应的依赖库：pip install PyQt5==5.10.1
    
    4) 若无报错，即可运行MainEntry.py。
    
