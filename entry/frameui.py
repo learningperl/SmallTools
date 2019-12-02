@@ -15,7 +15,9 @@ def run(p='.'):
     handler = monkey.op()
     channel.registerObject('pyjs', handler)
     view.page().setWebChannel(channel)
+    p = p.replace('\\','/')
     url_string = p + "/lib/pages/index.html"
+    print(url_string)
     view.load(QUrl(url_string))
     view.resize(1366, 880)
     view.show()

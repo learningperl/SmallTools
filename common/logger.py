@@ -15,6 +15,7 @@ def init(p='.'):
     # 这里可以修改开源模块的日志等级
     global path,logger
     path = p
+    print(path + "/lib/logs/all.log")
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     c = logging.FileHandler(path + "/lib/logs/all.log", mode='a', encoding='utf8')
     logger = logging.getLogger('frame log')

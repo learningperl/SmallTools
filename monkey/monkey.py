@@ -193,19 +193,23 @@ class op(QObject):
             else:
                 cmd = 'adb -s ' + self.params['devicename'] + ' shell ifconfig | findstr Link'
                 re_net = os.popen(cmd).read().split('\n')
+                for s in re_net:
+                    if s == '':
+                        re_net.remove('')
                 if re_net == None or len(re_net) < 2:
                     self.net = 'wlan0'
                 else:
                     flag = True
                     for i in range(0, len(re_net)):
                         if re_net[i].find('Scope: Link') >= 0:
-                            s = re_net[i - 1].split()
+                            s = re_net[i-1].split()
                             if s[0].find('dummy') >= 0 or s[0].find('p2p') >= 0:
                                 pass
                             else:
                                 if s[0].find('0') >= 0:
                                     flag = False
                                     self.net = s[0]
+                                    break
                     # 兼容华为
                     if flag:
                         self.net = "rmnet0"
