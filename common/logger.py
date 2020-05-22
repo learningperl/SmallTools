@@ -6,11 +6,11 @@ import logging
            at 2018-12-22
         用来格式化打印日志到文件和控制台
 """
-path = '.'
+path = '..'
 logger = None
 
 
-def init(p='..'):
+def init(p='.'):
     # create logger
     # 这里可以修改开源模块的日志等级
     global path,logger
