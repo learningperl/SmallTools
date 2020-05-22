@@ -10,7 +10,7 @@ path = '.'
 logger = None
 
 
-def init(p='.'):
+def init(p='..'):
     # create logger
     # 这里可以修改开源模块的日志等级
     global path,logger
